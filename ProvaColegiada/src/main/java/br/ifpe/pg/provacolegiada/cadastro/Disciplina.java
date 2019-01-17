@@ -14,19 +14,21 @@ public class Disciplina {
 	private String nome;
 	@ManyToOne
 	private Curso curso;
-	private int cargaHoraria;
+	private Integer cargaHoraria;
 	private String ementa;
+	private Integer periodo;
 	
 	public Disciplina() {
 		super();
 	}
-	public Disciplina(Integer id, String nome, Curso curso, int cargaHoraria, String ementa) {
+	public Disciplina(Integer id, String nome, Curso curso, Integer cargaHoraria, String ementa, Integer periodo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.curso = curso;
 		this.cargaHoraria = cargaHoraria;
 		this.ementa = ementa;
+		this.periodo = periodo;
 	}
 	public Integer getId() {
 		return id;
@@ -40,10 +42,10 @@ public class Disciplina {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getCargaHoraria() {
+	public Integer getCargaHoraria() {
 		return cargaHoraria;
 	}
-	public void setCargaHoraria(int cargaHoraria) {
+	public void setCargaHoraria(Integer cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
 	}
 	public String getEmenta() {
@@ -57,6 +59,12 @@ public class Disciplina {
 	}
 	public void setCurso(Curso curso) {
 		this.curso = curso;
+	}
+	public Integer getPeriodo() {
+	return periodo;
+	}
+	public void setPeriodo(Integer periodo) {
+		this.periodo = periodo;
 	}
 	
 }

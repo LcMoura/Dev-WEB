@@ -52,6 +52,13 @@
 					</td>
 				</tr>
 				<tr>
+					<td>Situação</td>
+					<td>
+					<input type="radio" id="ativo" placeholder="Ativo" th:field="*{situacao}" value="Ativo" />Ativo &nbsp;&nbsp;&nbsp;
+					<input type="radio" id="inativo" placeholder="Inativo" th:field="*{situacao}" value="Inativo" />Inativo
+					</td>
+				</tr>
+				<tr>
 					<td colspan="2" align="right">
 						<button type="submit" class="btn btn-primary"  name="action" value="salvar">Salvar</button>&nbsp;&nbsp;					
 						<button type="submit" class="btn btn-info" name="action" value="pesquisar">Pesquisar</button>&nbsp;&nbsp;
@@ -73,6 +80,7 @@
 					<th>Turno</th>
 					<th>Ano</th>
 					<th>Entrada</th>
+					<th>Situação</th>
 					<th>Editar</th>
 					<th>Remover</th>
 				</tr>
@@ -83,6 +91,7 @@
 					<td th:text="${turma.turno.text}"></td>
 					<td th:text="${turma.ano}"></td>
 					<td th:text="${turma.entrada}"></td>
+					<td th:text="${turma.situacao}"></td>
 					<td><a class="btn btn-warning"
 						th:href="@{/turmas/edit/{id}(id=${turma.id})}">Editar</a></td>
 					<td><a class="btn btn-warning"

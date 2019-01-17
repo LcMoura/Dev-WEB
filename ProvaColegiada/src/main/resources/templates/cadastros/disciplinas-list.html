@@ -32,10 +32,16 @@
 					<td><input type="text" id="nome" size="40"
 					placeholder="Nome" th:field="*{nome}" /></td>
 				</tr>
+				
+				<tr>
+					<td>Período: </td>
+					<td><input type="text" id="periodo"
+					placeholder="Período" th:field="*{periodo}" value="" /></td>
+				</tr>
 				<tr>
 					<td>Carga Horária: </td>
 					<td><input type="text" id="cargaHoraria"
-					placeholder="Carga Horária" th:field="*{cargaHoraria}" /></td>
+					placeholder="Carga Horária" th:field="*{cargaHoraria}" value="" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
@@ -57,6 +63,7 @@
 				<tr>
 					<th>Curso</th>
 					<th>Nome</th>
+					<th>Período</th>
 					<th>Carga horária</th>
 					<th>Editar</th>
 					<th>Remover</th>
@@ -66,6 +73,7 @@
 				<tr th:each="disciplina : ${lista}">
 					<td th:text="${disciplina.curso.nome}"></td>
 					<td th:text="${disciplina.nome}"></td>
+					<td th:text="${disciplina.periodo}"></td>
 					<td th:text="${disciplina.cargaHoraria}"></td>
 					<td><a class="btn btn-warning"
 						th:href="@{/disciplinas/edit/{id}(id=${disciplina.id})}">Editar</a></td>

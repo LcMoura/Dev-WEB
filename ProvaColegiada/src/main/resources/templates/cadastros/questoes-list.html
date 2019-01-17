@@ -3,40 +3,45 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Colegiada - Cadastro de Professores</title>
+<title>Colegiada - Cadastro de Questões</title>
 </head>
 <body>
 	<div th:insert="header"></div>
 
 	<div class="container">
-	    <h2>Professor</h2>
-		<h5>Adicionar ... Editar ... Pesquisar</h5>
+		<h2>Questões</h2>
+		<h5>Adicionar/Editar/Pesquisar:</h5>
 		<form class="form-narrow form-horizontal" method="post"
-			th:action="@{/professores/saveList}" th:object="${professor}">
+			th:action="@{/disciplinas/saveList}" th:object="${disciplina}">
 			<input type="hidden" id="id" th:field="*{id}" />
 			<table class="table table-striped">
 				<tr>
-					<td>Nome: </td>
+					<td>Curso:</td>
+					<td>
+						<select class="form-control" id="curso" th:field="*{curso}">
+							<option 
+								th:each="item : ${listaCursos}" 
+								th:value="${item.id}"
+								
+								th:text="${item.nome}" selected="selected"></option>
+						</select> 
+					</td>
+				</tr>
+				<tr>
+					<td>Nome da disciplina: </td>
 					<td><input type="text" id="nome" size="40"
 					placeholder="Nome" th:field="*{nome}" /></td>
 				</tr>
-				
 				<tr>
-					<td>Área de Pesquisa: </td>
-					<td><input type="text" id="nome" size="50"
-					placeholder="Área de Pesquisa" th:field="*{areaDePesquisa}" /></td>
-				</tr>
-				
-				<tr>
-					<td>E-mail: </td>
-					<td><input type="text" id="email" size="40"
-					placeholder="E-mail" th:field="*{email}" /></td>
+					<td>Carga Horária: </td>
+					<td><input type="text" id="cargaHoraria"
+					placeholder="Carga Horária" th:field="*{cargaHoraria}" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
 						<button type="submit" class="btn btn-primary"  name="action" value="salvar">Salvar</button>&nbsp;&nbsp;					
 						<button type="submit" class="btn btn-info" name="action" value="pesquisar">Pesquisar</button>&nbsp;&nbsp;
-						<a th:href="@{/professores/saveList}" class="btn btn-info">Novo</a>
+						<a th:href="@{/disciplinas/saveList}" class="btn btn-info">Nova Disciplina</a>
 					</td>
 				</tr>
 			</table>
@@ -46,26 +51,26 @@
 				th:text="${mensagemErro}"></div>
 		</form>		
 		<hr/>
-		<h5>Lista de Professores:</h5>		
+		<h5>Lista de Questões:</h5>		
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>Curso</th>
 					<th>Nome</th>
-					<th>E-mail</th>
-					<th>Área de Pesquisa</th>
+					<th>Carga horária</th>
 					<th>Editar</th>
 					<th>Remover</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="professor : ${lista}">
-					<td th:text="${professor.nome}"></td>
-					<td th:text="${professor.email}"></td>
-					<td th:text="${professor.areaDePesquisa}"></td>
+				<tr th:each="disciplina : ${lista}">
+					<td th:text="${disciplina.curso.nome}"></td>
+					<td th:text="${disciplina.nome}"></td>
+					<td th:text="${disciplina.cargaHoraria}"></td>
 					<td><a class="btn btn-warning"
-						th:href="@{/professores/edit/{id}(id=${professor.id})}">Editar</a></td>
+						th:href="@{/disciplinas/edit/{id}(id=${disciplina.id})}">Editar</a></td>
 					<td><a class="btn btn-warning"
-						th:href="@{/professores/remover/{id}(id=${professor.id})}">Remover</a></td>
+						th:href="@{/disciplinas/remover/{id}(id=${disciplina.id})}">Remover</a></td>
 				</tr>
 			</tbody>
 		</table>
