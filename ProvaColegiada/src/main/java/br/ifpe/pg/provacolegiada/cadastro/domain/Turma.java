@@ -1,4 +1,4 @@
-package br.ifpe.pg.provacolegiada.cadastro;
+package br.ifpe.pg.provacolegiada.cadastro.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

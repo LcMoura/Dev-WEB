@@ -8,8 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import br.ifpe.pg.provacolegiada.cadastro.Professor;
-import br.ifpe.pg.provacolegiada.cadastro.Topico;
+import br.ifpe.pg.provacolegiada.cadastro.domain.Professor;
+import br.ifpe.pg.provacolegiada.cadastro.domain.Topico;
 
 @Entity
 public class Questao {

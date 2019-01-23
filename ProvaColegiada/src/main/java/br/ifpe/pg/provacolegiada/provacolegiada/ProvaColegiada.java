@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-import br.ifpe.pg.provacolegiada.cadastro.Topico;
-import br.ifpe.pg.provacolegiada.cadastro.TurmaDisciplina;
+import br.ifpe.pg.provacolegiada.cadastro.domain.Topico;
+import br.ifpe.pg.provacolegiada.cadastro.domain.TurmaDisciplina;
 
 @Entity
 public class ProvaColegiada {

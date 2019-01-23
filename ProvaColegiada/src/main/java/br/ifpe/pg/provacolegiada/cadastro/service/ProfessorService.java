@@ -1,10 +1,13 @@
-package br.ifpe.pg.provacolegiada.cadastro;
+package br.ifpe.pg.provacolegiada.cadastro.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import br.ifpe.pg.provacolegiada.cadastro.domain.Professor;
+import br.ifpe.pg.provacolegiada.cadastro.repository.ProfessorRepository;
 
 @Service
 public class ProfessorService {

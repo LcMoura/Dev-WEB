@@ -1,4 +1,4 @@
-package br.ifpe.pg.provacolegiada.cadastro;
+package br.ifpe.pg.provacolegiada.cadastro.domain;
 
 public enum Modalidade {
 	

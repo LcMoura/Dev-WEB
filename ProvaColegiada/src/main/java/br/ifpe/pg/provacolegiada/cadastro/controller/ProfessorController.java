@@ -1,4 +1,4 @@
-package br.ifpe.pg.provacolegiada.cadastro;
+package br.ifpe.pg.provacolegiada.cadastro.controller;
 
 import javax.validation.Valid;
 
@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import br.ifpe.pg.provacolegiada.cadastro.domain.Professor;
+import br.ifpe.pg.provacolegiada.cadastro.service.ProfessorService;
 
 @Controller
 @RequestMapping("/professores/")
